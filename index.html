@@ -1,23 +1,26 @@
 <!DOCTYPE html>
 <html>
-    <body>
-        <div id="root"></div>
-    </body>
-    <script src="https://unpkg.com/react@17.0.2/umd/react.production.min.js"></script>
-    <script src="https://unpkg.com/react-dom@17.0.2/umd/react-dom.production.min.js"></script>
-    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
-    <script type="text/babel">
-        const root = document.getElementById("root");
-        function App () {
-            const data = React.useState(0);
-            console.log(data);
-            return (
-                <div>
-                    <h3>Total clicks: 0</h3>
-                    <button>Click me</button>
-                </div>
-            );
-        }
-        ReactDOM.render(<App />, root);
-    </script>
+  <body>
+    <div id="root"></div>
+  </body>
+  <script src="https://unpkg.com/react@17.0.2/umd/react.production.min.js"></script>
+  <script src="https://unpkg.com/react-dom@17.0.2/umd/react-dom.production.min.js"></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <script type="text/babel"> 
+    const root = document.getElementById("root");
+    function App() {
+      const [counter, modifier] = React.useState(0);
+      const onClick = () => {
+        counter = counter + 1;
+        console.log(counter)
+      }
+      return (
+        <div>
+          <h3>Total clicks: {counter}</h3>
+          <button onClick={counter}>Click me</button>
+        </div>
+      );
+    }
+    ReactDOM.render(<App />, root);
+  </script>
 </html>
